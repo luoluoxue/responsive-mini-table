@@ -41,8 +41,11 @@ function eval1(p: string, table: Td[][]) {
       return Number(table[val[0]][val[1]].show(table));
     });
   }
-  //@ts-expect-error
-  return eval(p, [select, sum]);
+  return eval(
+    p,
+    //@ts-expect-error  这里用于保证编译后 select 这些函数不被删除掉
+    [select, sum]
+  );
 }
 
 class Td {
