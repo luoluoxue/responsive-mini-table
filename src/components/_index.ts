@@ -1,5 +1,5 @@
-import { ref, computed, watchEffect } from "vue";
-export default {
+import { ref, computed, watchEffect, defineComponent } from "vue";
+export default defineComponent({
   name: "HelloWorld",
   setup() {
     let renderData = computed(() => {
@@ -28,7 +28,7 @@ export default {
       changeStatus,
     };
   },
-};
+});
 function eval1(p: string, table: Td[][]) {
   function sum(a: number[]) {
     let count = 0;
