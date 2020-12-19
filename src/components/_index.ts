@@ -41,8 +41,8 @@ function eval1(p: string, table: Td[][]) {
       return Number(table[val[0]][val[1]].show(table));
     });
   }
-
-  return eval(p);
+  //@ts-expect-error
+  return eval(p, [select, sum]);
 }
 
 class Td {
